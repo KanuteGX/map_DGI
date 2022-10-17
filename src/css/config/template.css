@@ -1,0 +1,10 @@
+:root {
+	--b: hsl(0, 0%, 15%);
+	--w: hsl(0, 0%, 95%);
+	color: var(--w);
+	background-color: var(--b);
+}
+
+#map {
+	height: 100vh;
+}
