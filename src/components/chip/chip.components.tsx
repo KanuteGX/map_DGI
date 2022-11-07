@@ -1,10 +1,8 @@
-import { ReactElement } from 'react';
-
-export function Chip({ children, icon }: { children: ReactElement; icon: any }) {
+export function Chip({ children, icon }: { children: any; icon: any }) {
 	return (
 		<div className="chips">
-			<div>{icon}</div>
-			<p>{children}</p>
+			<div className="chips--icon">{icon}</div>
+			<p className="chips--content">{children}</p>
 		</div>
 	);
 }

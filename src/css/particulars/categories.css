@@ -1,0 +1,17 @@
+.categories {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	height: 60px;
+	width: 50vw;
+	min-width: 700px;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.categories > div {
+	width: 200%;
+	display: flex;
+	justify-content: space-evenly;
+}

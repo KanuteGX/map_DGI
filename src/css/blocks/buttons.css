@@ -10,15 +10,15 @@
 	cursor: pointer;
 }
 
-.chips > div,
-.chips > p {
+.chips--icon,
+.chips--content {
 	display: flex;
 	align-items: center;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-.chips > div {
+.chips--icon {
 	margin-right: 10px;
 }
 
