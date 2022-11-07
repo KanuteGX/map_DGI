@@ -12,6 +12,8 @@ export function Categories() {
 	);
 }
 
+// example data
+
 const chipData = [
 	{ icon: 'X', children1: 'Hospital' },
 	{ icon: 'X', children1: 'Troncales' },
