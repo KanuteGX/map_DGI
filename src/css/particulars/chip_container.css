@@ -1,0 +1,16 @@
+.chip__scroll {
+	position: relative;
+	width: 40vw;
+	z-index: 1000;
+	top: 20px;
+	height: 60px;
+	overflow: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chip__container {
+	width: 200%;
+	display: flex;
+	justify-content: space-evenly;
+}

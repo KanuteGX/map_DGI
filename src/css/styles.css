@@ -1,0 +1,6 @@
+@import url(../index.css); /* Style of Map */
+@import url(config/Normalize.css);
+@import url(config/colors.css);
+@import url(base/root.css);
+@import url(blocks/buttons.css);
+@import url(particulars/chip_container.css);

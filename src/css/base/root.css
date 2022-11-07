@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+
+	/* in firefox */
+
+	scrollbar-width: thin;
+	scrollbar-color: var(--colorSecondary) var(--LetBgDoc);
+}
+
+/* scroll */
+/* in webkit/blink (chromium) */
+
+*::-webkit-scrollbar {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+	width: 0.6em;
+}
+
+*::-webkit-scrollbar-button:increment {
+	display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+	height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 20px;
+	border: 2px solid var transparent;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+:root {
+	color: var(--b);
+}

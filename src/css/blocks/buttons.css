@@ -1,0 +1,29 @@
+/* Chips */
+
+.chips {
+	display: flex;
+	background-color: var(--w);
+	box-shadow: -1px 1px 5px -2px var(--b);
+	padding: 8px 12px;
+	border-radius: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.chips > div,
+.chips > p {
+	display: flex;
+	align-items: center;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.chips > div {
+	margin-right: 10px;
+}
+
+.chips:hover {
+	background-color: hsl(0, 0%, 90%);
+}
+
+/*  */
