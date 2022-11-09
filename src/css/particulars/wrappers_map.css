@@ -1,0 +1,37 @@
+.wrappersMap-container {
+	position: absolute;
+	bottom: 20px;
+	left: 50px;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+}
+
+.wrapper-map,
+.wrapper-map--select > div {
+	width: 60px;
+	height: 60px;
+	background-color: black;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.wrapper-map {
+	margin-right: 20px;
+}
+
+.wrapper-map--select {
+	display: none;
+	background-color: var(--w);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.wrapper-map--select__active {
+	display: flex;
+}
+
+.wrapper-map--select > div {
+	margin-left: 10px;
+	margin-right: 10px;
+}

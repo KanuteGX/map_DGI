@@ -1,6 +1,8 @@
 @import url(../index.css); /* Style of Map */
 @import url(config/Normalize.css);
 @import url(config/colors.css);
+@import url(config/measures.css);
 @import url(base/root.css);
 @import url(blocks/buttons.css);
 @import url(particulars/categories.css);
+@import url(particulars/wrappers_map.css);
