@@ -4,8 +4,8 @@ export function Categories() {
 	return (
 		<div className="categories">
 			<div>
-				{chipData.map((e) => (
-					<Chip children={e.children1} icon={e.icon}></Chip>
+				{chipData.map((e, index) => (
+					<Chip children={e.children1} icon={e.icon} key={index}></Chip>
 				))}
 			</div>
 		</div>
