@@ -1,10 +1,14 @@
 import { MainView } from './views/main/main.view';
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 
 function App() {
 	return (
-		<div style={{ width: '100vw', height: '100vh' }}>
-			<MainView />
-		</div>
+		<Provider store={store}>
+			<div style={{ width: '100vw', height: '100vh' }}>
+				<MainView />
+			</div>
+		</Provider>
 	);
 }
 
