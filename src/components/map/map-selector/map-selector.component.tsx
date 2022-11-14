@@ -27,12 +27,12 @@ export const MapSelector = () => {
 
 	return (
 		<>
-			{<TileLayer url={maps[tileMap].url} />}
-
+			{tileMap === 0 && <TileLayer url={maps[tileMap].url} />}
+			{tileMap === 1 && <TileLayer url={maps[tileMap].url} />}
 			<div className="select-map--wrapper">
 				<MapBaseTileItem
 					style={{
-						backgroundImage: `${maps[tileMap].img}`
+						backgroundImage: `url(${maps[tileMap].img})`
 					}}
 					className="select-map__indicator"
 					onClick={() => showTiles(!openTiles)}
