@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { EditingShapeSlice } from '../slice/editing-shape-slice'
+import { ShapesListSlice } from '../slice/shapes-list'
 import { UserSlice } from "../slice/user-slice"
 // ...
 
 export const store = configureStore({
     reducer: {
-        user: UserSlice.reducer
+        user: UserSlice.reducer,
+        editingShape: EditingShapeSlice.reducer,
+        shapesList: ShapesListSlice.reducer
     },
 })
 

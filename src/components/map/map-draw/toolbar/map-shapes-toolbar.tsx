@@ -1,6 +1,6 @@
 import { ShapeType } from "../../../../domain/models/shape.model"
 
-export function MapShapesToolbar({ selectedShape, onChange }: mapShapesToolbarProps) {
+export function MapShapesToolbar(/* { selectedShape, onChange }: mapShapesToolbarProps */) {
 
   const mockData: { name: string, shape: ShapeType }[] = [
     { name: 'Circulo', shape: 'Circle' },
@@ -18,7 +18,7 @@ export function MapShapesToolbar({ selectedShape, onChange }: mapShapesToolbarPr
   >
     <ul>
       {mockData.map(s => (
-        <li onClick={() => onChange(s.shape)} key={s.shape}>{s.name}</li>
+        <li onClick={() => {/* onChange(s.shape) */}} key={s.shape}>{s.name}</li>
       ))}
     </ul>
   </div>
