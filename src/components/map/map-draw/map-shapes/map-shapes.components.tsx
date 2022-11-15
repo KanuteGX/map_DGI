@@ -1,3 +1,4 @@
+import { LatLng } from "leaflet";
 import React, { ReactElement, useState } from "react";
 import { Circle, useMap, useMapEvents } from "react-leaflet";
 import { ShapeType } from "../../../../domain/models/shape.model";
@@ -14,4 +15,13 @@ export function MapShapes() {
     {shapesList}
     <MapShapesToolbar /* onChange={setShape} selectedShape={shape} */ />
   </>
+}
+
+export function buildShape(shape: ShapeType, startPoint: LatLng) {
+  switch (shape) {
+    case 'Circle':
+      return <Circle dashArray={"7"} center={startPoint} radius={0} />
+    default:
+      return <Circle dashArray={"7"} center={startPoint} radius={0} />
+  }
 }
