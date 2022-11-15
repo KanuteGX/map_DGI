@@ -8,7 +8,7 @@ import LineShapeTool from "../toolbar/line-shape-tool";
 import { MapShapesToolbar } from "../toolbar/map-shapes-toolbar";
 
 export function MapShapes() {
-  const [currentTool, setCurrentTool] = useState<ReactElement | undefined>(<LineShapeTool />)
+  const [currentTool, setCurrentTool] = useState<ReactElement | undefined>(<CircleShapeTool />)
   const shapesList = useAppSelector((state) => state.shapesList.list);
 
   return <>

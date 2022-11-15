@@ -28,6 +28,13 @@ export default function CircleShapeTool() {
                 radius: initLatLng.distanceTo(e.latlng),
                 center: initLatLng
             })))
+        }, keyup: (e) => {
+            if (editingShape && e.originalEvent.keyCode === 13) {
+                dispatch(updateShapesList(editingShape))
+                dispatch(setEditingShape(undefined))
+            } else if (e.originalEvent.keyCode === 27) {
+                dispatch(setEditingShape(undefined))
+            }
         },
     })
 

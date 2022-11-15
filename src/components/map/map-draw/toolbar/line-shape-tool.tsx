@@ -35,9 +35,12 @@ export default function LineShapeTool() {
                 })))
             }
         },
-        keypress: (e) => {
+        keyup: (e) => {
             if (editingShape && e.originalEvent.keyCode === 13) {
                 dispatch(updateShapesList(editingShape))
+                dispatch(setEditingShape(undefined))
+                setLinePoints([])
+            } else if (e.originalEvent.keyCode === 27) {
                 dispatch(setEditingShape(undefined))
                 setLinePoints([])
             }
