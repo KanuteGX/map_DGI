@@ -1,4 +1,5 @@
 @import "../node_modules/leaflet/dist/leaflet.css";
+@import "./assets/styles/modal.css";
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
