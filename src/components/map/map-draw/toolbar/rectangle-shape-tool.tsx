@@ -7,23 +7,25 @@ import { setEditingShape } from '../../../../redux/slice/editing-shape-slice';
 import { updateShapesList } from '../../../../redux/slice/shapes-list';
 import { shapeFactory } from '../map-shapes/map-shapes.components';
 
-export default function LineShapeTool() {
+export default function RectangleShapeTool() {
 
     const editingShape = useAppSelector((state) => state.editingShape.editingShape)
     const dispatch = useAppDispatch()
-    const [linePoints, setLinePoints] = useState<LatLng[]>([])
+    const [rectanglePoints, setRectanglePoints] = useState<LatLng[]>([])
+
     const map = useMap()
 
     useMapEvents({
         click: (e) => {
             if (editingShape) {
-                setLinePoints([...linePoints, e.latlng])
-                dispatch(setEditingShape(cloneElement(editingShape, {
-                    positions: [...linePoints, e.latlng]
+                dispatch(updateShapesList(cloneElement(editingShape, {
+                    bounds: [...rectanglePoints, e.latlng]
                 })))
+                dispatch(setEditingShape(undefined))
+                setRectanglePoints([])
             } else {
-                setLinePoints([...linePoints, e.latlng])
-                const currentShape = shapeFactory("Line", e.latlng)
+                setRectanglePoints([...rectanglePoints, e.latlng])
+                const currentShape = shapeFactory("Rectangle", e.latlng)
                 dispatch(setEditingShape(currentShape))
 
             }
@@ -31,7 +33,7 @@ export default function LineShapeTool() {
         mousemove: (e) => {
             if (editingShape) {
                 dispatch(setEditingShape(cloneElement(editingShape, {
-                    positions: [...linePoints, e.latlng]
+                    bounds: [...rectanglePoints, e.latlng]
                 })))
             }
         },
@@ -39,10 +41,20 @@ export default function LineShapeTool() {
             if (editingShape && e.originalEvent.keyCode === 13) {
                 dispatch(updateShapesList(editingShape))
                 dispatch(setEditingShape(undefined))
-                setLinePoints([])
+                setRectanglePoints([])
             } else if (e.originalEvent.keyCode === 27) {
                 dispatch(setEditingShape(undefined))
-                setLinePoints([])
+                setRectanglePoints([])
+            }
+        },
+
+        dblclick: (e) => {
+            if (editingShape) {
+                dispatch(updateShapesList(editingShape))
+                dispatch(setEditingShape(cloneElement(editingShape, {
+                    bounds: [...rectanglePoints, e.latlng]
+                })))
+                setRectanglePoints([])
             }
         },
     })
