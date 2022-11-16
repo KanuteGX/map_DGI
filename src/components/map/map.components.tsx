@@ -15,7 +15,7 @@ export function GobMap() {
 		<div style={{ width: '100vw', height: '100vh' }}
 			className={!!editingShape ? "hide-cursor" : ""}
 		>
-			{false && <Modal>
+			{true && <Modal>
 				hola
 			</Modal>}
 			<MapContainer

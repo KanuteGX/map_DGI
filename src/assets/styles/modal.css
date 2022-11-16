@@ -21,3 +21,23 @@
 
 }
 
+.modal-body {
+    position: absolute;
+    top: 10%;
+}
+
+.modal-header {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 10%;
+}
+
+.modal-footer {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 10%;
+}
