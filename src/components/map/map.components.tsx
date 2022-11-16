@@ -15,9 +15,9 @@ export function GobMap() {
 		<div style={{ width: '100vw', height: '100vh' }}
 			className={!!editingShape ? "hide-cursor" : ""}
 		>
-			<Modal>
+			{false && <Modal>
 				hola
-			</Modal>
+			</Modal>}
 			<MapContainer
 				style={{ width: '100%', height: '100vh' }}
 				center={[9.006826, -66.481284]}
