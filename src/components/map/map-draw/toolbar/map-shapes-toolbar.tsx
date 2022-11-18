@@ -4,7 +4,9 @@ export function MapShapesToolbar(/* { selectedShape, onChange }: mapShapesToolba
 
   const mockData: { name: string, shape: ShapeType }[] = [
     { name: 'Circulo', shape: 'Circle' },
-    { name: 'Linea', shape: 'Line' }
+    { name: 'Linea', shape: 'Line' },
+    { name: 'Poligono', shape: 'Polygon' },
+    { name: 'Rectangulo', shape: 'Rectangle' },
   ]
 
   return <div
