@@ -25,6 +25,7 @@ export default function CircleShapeTool() {
         },
         mousemove: (e) => {
             editingShape && dispatch(setEditingShape(cloneElement(editingShape, {
+                key: new Date().getUTCMilliseconds(), 
                 radius: initLatLng.distanceTo(e.latlng),
                 center: initLatLng
             })))

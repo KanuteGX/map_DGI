@@ -19,6 +19,7 @@ export default function PolygonShapeTool() {
             if (editingShape) {
                 setPolygonPoints([...polygonPoints, e.latlng])
                 dispatch(setEditingShape(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     positions: [...polygonPoints, e.latlng]
                 })))
             } else {
@@ -31,6 +32,7 @@ export default function PolygonShapeTool() {
         mousemove: (e) => {
             if (editingShape) {
                 dispatch(setEditingShape(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     positions: [...polygonPoints, e.latlng]
                 })))
             }
@@ -38,6 +40,7 @@ export default function PolygonShapeTool() {
         keyup: (e) => {
             if (editingShape && e.originalEvent.keyCode === 13) {
                 dispatch(updateShapesList(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     positions: [...polygonPoints]
                 })))
                 dispatch(setEditingShape(undefined))
@@ -52,6 +55,7 @@ export default function PolygonShapeTool() {
             if (editingShape) {
                 dispatch(updateShapesList(editingShape))
                 dispatch(setEditingShape(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     positions: [...polygonPoints, e.latlng]
                 })))
                 setPolygonPoints([])

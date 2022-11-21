@@ -19,6 +19,7 @@ export default function RectangleShapeTool() {
         click: (e) => {
             if (editingShape) {
                 dispatch(updateShapesList(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     bounds: [...rectanglePoints, e.latlng]
                 })))
                 dispatch(setEditingShape(undefined))
@@ -33,6 +34,7 @@ export default function RectangleShapeTool() {
         mousemove: (e) => {
             if (editingShape) {
                 dispatch(setEditingShape(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     bounds: [...rectanglePoints, e.latlng]
                 })))
             }
@@ -52,6 +54,7 @@ export default function RectangleShapeTool() {
             if (editingShape) {
                 dispatch(updateShapesList(editingShape))
                 dispatch(setEditingShape(cloneElement(editingShape, {
+                    key: new Date().getUTCMilliseconds(), 
                     bounds: [...rectanglePoints, e.latlng]
                 })))
                 setRectanglePoints([])
