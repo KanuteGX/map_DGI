@@ -9,7 +9,7 @@ import RectangleShapeTool from './rectangle-shape-tool';
 
 export function MapShapesToolbar({ onChange }: mapShapesToolbarProps) {
 
-    const editingShape = useAppSelector((state) => state.editingShape.editingShape)
+	const editingShape = useAppSelector((state) => state.editingShape.editingShape)
 
 	const [currentTool, setCurrentTool] = useState<ShapeType | undefined>()
 
@@ -27,12 +27,19 @@ export function MapShapesToolbar({ onChange }: mapShapesToolbarProps) {
 		>
 			<ul className="shape-list">
 				{mockData.map((s) => {
+
+					const is_active = currentTool === s.shape;
 					return (
 						<li
-							className={`shape-list--item ${currentTool === s.shape ? 'shape-list--item__active' : ''}`}
+							className={`shape-list--item ${is_active ? 'shape-list--item__active' : ''}`}
 							onClick={(e) => {
-								onChange(s.tool)
-								setCurrentTool(s.shape)
+								if (is_active) {
+									onChange(undefined)
+									setCurrentTool(undefined)
+								} else {
+									onChange(s.tool)
+									setCurrentTool(s.shape)
+								}
 							}}
 							key={s.shape}>
 							<img src={s.icon} alt={s.name} title={s.name} />
@@ -45,5 +52,5 @@ export function MapShapesToolbar({ onChange }: mapShapesToolbarProps) {
 }
 
 type mapShapesToolbarProps = {
-	onChange: (tool: ReactElement) => void;
+	onChange: (tool: ReactElement | undefined) => void;
 };
