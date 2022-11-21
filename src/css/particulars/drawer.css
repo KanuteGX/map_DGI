@@ -1,4 +1,4 @@
-.modal {
+.drawer {
 	display: inline-block;
 	position: fixed;
 	height: 100%;
@@ -11,11 +11,11 @@
 	transition: transform 0.5s;
 }
 
-.modal__active {
+.drawer__active {
 	transform: translateX(0%);
 }
 
-.modal--tab {
+.drawer--tab {
 	font-family: monospace;
 	font-weight: bold;
 	font-size: 2rem;
@@ -31,6 +31,7 @@
 	position: absolute;
 	left: 100%;
 	top: calc(50% - 40px);
+	transition: all 0.2s;
 }
 
 .modal--tab:hover {

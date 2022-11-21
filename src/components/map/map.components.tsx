@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MapContainer } from 'react-leaflet';
 import { useAppSelector } from '../../redux/redux-hooks';
 import { Categories } from '../categories_map/categories.map';
-import Drawer from '../modal/modal';
+import Drawer from '../drawer/drawer';
 import { MapShapes } from './map-draw/map-shapes/map-shapes.components';
 import { MapSelector } from './map-selector/map-selector.component';
 

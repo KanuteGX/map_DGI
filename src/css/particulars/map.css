@@ -6,6 +6,6 @@
 	transition: width 0.5s;
 }
 
-.map__active-modal {
+.map__active-drawer {
 	width: 70%;
 }

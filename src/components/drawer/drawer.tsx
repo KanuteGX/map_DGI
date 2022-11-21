@@ -8,12 +8,12 @@ export default function Drawer() {
 	function change() {
 		setOpen(!open);
 		const mapContainer = map.getContainer();
-		mapContainer.style.width = !open ? '70%' : '100%';
+		mapContainer.classList.toggle('map__active-drawer', !open);
 	}
 
 	return (
-		<div className={`modal ${open ? 'modal__active' : ''}`}>
-			<div onClick={() => change()} className="modal--tab">
+		<div className={`drawer ${open ? 'drawer__active' : ''}`}>
+			<div onClick={() => change()} className="drawer--tab">
 				{open ? '<' : '>'}
 			</div>
 		</div>
