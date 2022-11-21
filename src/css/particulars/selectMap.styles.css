@@ -1,6 +1,6 @@
 /* wrapper */
 
-.select-map--wrapper {
+.select-map {
 	display: flex;
 	gap: 1ch;
 	flex-direction: row;
@@ -11,18 +11,29 @@
 }
 
 /* Capas selecionables */
-.select-map--styles:nth-of-type(2),
-.select-map--styles:nth-of-type(3),
-.select-map__indicator {
+
+.select-map--styles__indicator,
+.select-map--styles {
+	position: relative;
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: 500% 500%;
 }
 
+.select-map--styles__indicator > div {
+	background-color: hsla(0, 0%, 95%, 75%);
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0;
+	letter-spacing: 1px;
+}
+
 .select-map--styles:nth-of-type(2) {
-	background-image: url(/colorfull_natural.png);
+	background-image: url(/select-map/colorfull_natural.png);
 }
 
 .select-map--styles:nth-of-type(3) {
-	background-image: url(/satelital.png);
+	background-image: url(/select-map/satelital.png);
 }

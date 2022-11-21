@@ -4,6 +4,7 @@
 @import url(config/measures.css);
 @import url(base/root.css);
 @import url(blocks/buttons.css);
+@import url(blocks/boxs.css);
 @import url(particulars/categories.map.css);
-@import url(particulars/wrappers_map.css);
 @import url(particulars/selectMap.styles.css);
+@import url(particulars/select.shapes.css);

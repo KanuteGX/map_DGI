@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, ReactElement, useState } from 'react';
 import { TileLayer } from 'react-leaflet';
 
 export const MapSelector = () => {
@@ -9,11 +9,11 @@ export const MapSelector = () => {
 	const maps: objMapStyles[] = [
 		{
 			url: 'https://api.mapbox.com/styles/v1/illiantech/cl9hdcu23002314qsr5vfo2dg/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaWxsaWFudGVjaCIsImEiOiJjbDlmcDZyYjE1NnY1M29teDN2eTh3dnF5In0.NhrvXnduOvE5mMbKFF07UA',
-			img: '/colorfull_natural.png'
+			img: '/select-map/colorfull_natural.png'
 		},
 		{
 			url: 'https://api.mapbox.com/styles/v1/illiantech/clagxhb0l000214pcvg5vqkpq/tiles/512/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaWxsaWFudGVjaCIsImEiOiJjbDlmcDZyYjE1NnY1M29teDN2eTh3dnF5In0.NhrvXnduOvE5mMbKFF07UA',
-			img: '/satelital.png'
+			img: '/select-map/satelital.png'
 		}
 	];
 
@@ -29,14 +29,15 @@ export const MapSelector = () => {
 		<>
 			{tileMap === 0 && <TileLayer url={maps[tileMap].url} />}
 			{tileMap === 1 && <TileLayer url={maps[tileMap].url} />}
-			<div className="select-map--wrapper">
+			<div className="select-map">
 				<MapBaseTileItem
 					style={{
 						backgroundImage: `url(${maps[tileMap].img})`
 					}}
-					className="select-map__indicator"
+					className="select-map--styles__indicator"
 					onClick={() => showTiles(!openTiles)}
 					n={-1}
+					flag={<div>Estilos</div>}
 				/>
 				{openTiles && maps.map((m, i) => <MapBaseTileItem n={i} onClick={() => changeTile(i)} key={i} className="select-map--styles" />)}
 			</div>
@@ -48,12 +49,18 @@ const MapBaseTileItem = ({
 	onClick,
 	n,
 	className,
-	style
+	style,
+	flag
 }: {
 	onClick: (mapNumber: number) => void;
 	n: number;
 	className?: string;
 	style?: CSSProperties;
+	flag?: ReactElement;
 }) => {
-	return <div onClick={() => onClick(n)} className={`box-border ${className}`} style={style}></div>;
+	return (
+		<div onClick={() => onClick(n)} className={`box-border ${className}`} style={style}>
+			{flag}
+		</div>
+	);
 };

@@ -1,0 +1,10 @@
+/* select-map */
+
+.box-border {
+	cursor: pointer;
+	height: 75px;
+	width: 75px;
+	background-color: var(--w);
+	border-radius: 5px;
+	border: 5px solid var(--w);
+}

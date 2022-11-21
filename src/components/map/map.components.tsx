@@ -6,25 +6,19 @@ import { MapShapes } from './map-draw/map-shapes/map-shapes.components';
 import { MapSelector } from './map-selector/map-selector.component';
 
 export function GobMap() {
-
 	const editingShape = useAppSelector((state) => state.editingShape.editingShape);
 
-	console.log()
+	console.log();
 
 	return (
-		<div style={{ width: '100vw', height: '100vh' }}
-			className={!!editingShape ? "hide-cursor" : ""}
-		>
-			{true && <Modal>
-				hola
-			</Modal>}
+		<div style={{ width: '100vw', height: '100vh' }} className={!!editingShape ? 'hide-cursor' : ''}>
+			{true && <Modal>hola</Modal>}
 			<MapContainer
 				style={{ width: '100%', height: '100vh' }}
 				center={[9.006826, -66.481284]}
 				zoom={8}
 				doubleClickZoom={false}
-				scrollWheelZoom={true}
-			>
+				scrollWheelZoom={true}>
 				<MapShapes />
 				<MapSelector />
 			</MapContainer>
