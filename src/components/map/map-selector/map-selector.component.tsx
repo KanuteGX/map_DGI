@@ -37,7 +37,8 @@ export const MapSelector = () => {
 					className="select-map--styles__indicator"
 					onClick={() => showTiles(!openTiles)}
 					n={-1}
-					flag={<div>Estilos</div>}
+					flag={<div>Mapas</div>}
+					title="Estilos de mapas"
 				/>
 				{openTiles && maps.map((m, i) => <MapBaseTileItem n={i} onClick={() => changeTile(i)} key={i} className="select-map--styles" />)}
 			</div>
@@ -50,16 +51,18 @@ const MapBaseTileItem = ({
 	n,
 	className,
 	style,
-	flag
+	flag,
+	title
 }: {
 	onClick: (mapNumber: number) => void;
 	n: number;
 	className?: string;
 	style?: CSSProperties;
 	flag?: ReactElement;
+	title?: string;
 }) => {
 	return (
-		<div onClick={() => onClick(n)} className={`box-border ${className}`} style={style}>
+		<div onClick={() => onClick(n)} className={`box-border ${className}`} style={style} title={title}>
 			{flag}
 		</div>
 	);

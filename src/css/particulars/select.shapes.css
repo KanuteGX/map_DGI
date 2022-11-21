@@ -23,26 +23,24 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: all 0.2s;
 }
 
 .shape-list--item:hover {
 	background-color: var(--wHover);
-	
 }
 
-.shape-list--item__active,.shape-list--item__active:hover {
+.shape-list--item__active,
+.shape-list--item__active:hover {
 	background-color: var(--b);
-	
 }
-
-
-.shape-list--item__active > img,.shape-list--item__active:hover > img {
-	filter: invert(1);
-	
-}
-
-
 
 .shape-list--item > img {
 	width: 50%;
+	transition: all 0.2s;
+}
+
+.shape-list--item__active > img,
+.shape-list--item__active:hover > img {
+	filter: invert(1);
 }
